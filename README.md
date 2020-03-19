@@ -3,7 +3,7 @@ StructPool
 The code for our ICLR paper: StructPool: Structured Graph Pooling via Conditional Random Fields
 
 =============
-The code is built based on DGCNN(Deep Graph Convolutional Neural Network) and Graph UNet. Thanks a lot for their code sharing! 
+The code is built based on DGCNN(https://github.com/muhanzhang/pytorch_DGCNN) and Graph UNet(https://github.com/HongyangGao/Graph-U-Nets). Thanks a lot for their code sharing! 
 
 
 
