@@ -3,6 +3,7 @@ StructPool
 The code for our ICLR paper: StructPool: Structured Graph Pooling via Conditional Random Fields
 
 =============
+
 The code is built based on DGCNN(https://github.com/muhanzhang/pytorch_DGCNN) and Graph UNet(https://github.com/HongyangGao/Graph-U-Nets). Thanks a lot for their code sharing! 
 
 
@@ -50,11 +51,11 @@ where the fold number 1 will be ignored.
 Reference
 ---------
 
-@inproceedings{
-Yuan2020StructPool:,
-title={StructPool: Structured Graph Pooling via Conditional Random Fields},
-author={Hao Yuan and Shuiwang Ji},
-booktitle={International Conference on Learning Representations},
-year={2020},
-url={https://openreview.net/forum?id=BJxg_hVtwH}
-}
+    @inproceedings{
+    Yuan2020StructPool:,
+    title={StructPool: Structured Graph Pooling via Conditional Random Fields},
+    author={Hao Yuan and Shuiwang Ji},
+    booktitle={International Conference on Learning Representations},
+    year={2020},
+    url={https://openreview.net/forum?id=BJxg_hVtwH}
+    }
