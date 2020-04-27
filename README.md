@@ -1,38 +1,32 @@
-PyTorch DGCNN
+StructPool
+=============
+The code for our ICLR paper: StructPool: Structured Graph Pooling via Conditional Random Fields
+
 =============
 
-Updates 6/13/2018
------------------
-Switch to PyTorch 0.4.0 now. Please update your PyTorch version.
+The code is built based on DGCNN(https://github.com/muhanzhang/pytorch_DGCNN) and Graph UNet(https://github.com/HongyangGao/Graph-U-Nets). Thanks a lot for their code sharing! 
 
-Updates 4/16/2018
------------------
+The proposed Pooling Layer
+=============
 
-Added support to multi-dimensional continuous node features. Added support to use your own datasets. 
+We first employ GCNs to obtain u(x) for a batch. Next, perform pooling for each graph.
 
-About
------
-
-PyTorch implementation of DGCNN (Deep Graph Convolutional Neural Network). Check https://github.com/muhanzhang/DGCNN for more information.
+Please refer to "DGCNN_embedding.py" and "pool.py" for details.
 
 Installation
 ------------
 
-This implementation is based on Hanjun Dai's PyTorch version of structure2vec. Please first unzip the pytorch_structure2vec-master.zip by
-
-    unzip pytorch_structure2vec-master.zip
-
-Then, under the "pytorch_structure2vec-master/s2vlib/" directory, type
+This implementation is based on Hanjun Dai's structure2vec graph backend. Under the "lib/" directory, type
 
     make -j4
 
-to build the necessary c++ backend.
+to compile the necessary c++ files.
 
 After that, under the root directory of this repository, type
 
     ./run_DGCNN.sh
 
-to run DGCNN on dataset DD with default settings.
+to run DGCNN on dataset MUTAG with the default setting.
 
 Or type 
 
@@ -50,15 +44,6 @@ to use the last 200 graphs in the dataset as testing graphs. The fold number 1 w
 
 Check "run_DGCNN.sh" for more options.
 
-Datasets
---------
-
-Default graph datasets are stored in "data/DSName/DSName.txt". Check the "data/README.md" for the format. 
-
-In addition to the support of discrete node labels (tags), DGCNN now supports multi-dimensional continuous node features. One example dataset with continuous node features is "Synthie". Check "data/Synthie/Synthie.txt" for the format. 
-
-There are two preprocessing scripts in MATLAB: "mat2txt.m" transforms .mat graphs (from Weisfeiler-Lehman Graph Kernel Toolbox), "dortmund2txt.m" transforms graph benchmark datasets downloaded from https://ls11-www.cs.tu-dortmund.de/staff/morris/graphkerneldatasets
-
 How to use your own data
 ------------------------
 
@@ -71,14 +56,11 @@ where the fold number 1 will be ignored.
 Reference
 ---------
 
-If you find the code useful, please cite our paper:
-
-    @inproceedings{zhang2018end,
-      title={An End-to-End Deep Learning Architecture for Graph Classification.},
-      author={Zhang, Muhan and Cui, Zhicheng and Neumann, Marion and Chen, Yixin},
-      booktitle={AAAI},
-      year={2018}
+    @inproceedings{
+    Yuan2020StructPool:,
+    title={StructPool: Structured Graph Pooling via Conditional Random Fields},
+    author={Hao Yuan and Shuiwang Ji},
+    booktitle={International Conference on Learning Representations},
+    year={2020},
+    url={https://openreview.net/forum?id=BJxg_hVtwH}
     }
-
-Muhan Zhang, muhan@wustl.edu
-3/19/2018
