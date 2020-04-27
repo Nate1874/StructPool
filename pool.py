@@ -78,8 +78,9 @@ class Pool(nn.Module):
       #      print(i)
 
         L = F.softmax(q_values, dim=-1) #[b,n,k]
-        view = L.view(-1, self.k) 
-        L_onehot = (view == view.max(dim=1, keepdim=True)[0]).view_as(L).float() #[b,n,k]
+        L_onehot = L
+    #    view = L.view(-1, self.k) 
+     #   L_onehot = (view == view.max(dim=1, keepdim=True)[0]).view_as(L).float() #[b,n,k]
         L_onehot_T = torch.transpose(L_onehot, -2, -1)#[b,k,n]
     #    print("L_onehot:", L_onehot.type())
     #\    print("L_onehot_T:", L_onehot_T.type())
